@@ -5,32 +5,32 @@ import Dark from "./dark";
 import Light from "./light";
 
 export enum ThemeTypes {
-    Primary,
-    Dark,
-    Light,
+  Primary,
+  Dark,
+  Light,
 }
 
 export function getTheme(type: ThemeTypes) {
-    switch (type) {
-        case ThemeTypes.Primary:
-            return Primary;
-        case ThemeTypes.Dark:
-            return Dark;
-        case ThemeTypes.Light:
-            return Light;
-    }
+  switch (type) {
+    case ThemeTypes.Primary:
+      return Primary;
+    case ThemeTypes.Dark:
+      return Dark;
+    case ThemeTypes.Light:
+      return Light;
+  }
 }
 
 export default function useTheme(type: ThemeTypes = ThemeTypes.Primary) {
-    const [theme, setTheme] = useState<Theme>(getTheme(type));
-    const [themeType, setThemeType] = useState<ThemeTypes>(ThemeTypes.Primary);
+  const [theme, setTheme] = useState<Theme>(getTheme(type));
+  const [themeType, setThemeType] = useState<ThemeTypes>(ThemeTypes.Primary);
 
-    useEffect(() => {
-        setTheme(getTheme(themeType));
-    }, [themeType]);
+  useEffect(() => {
+    setTheme(getTheme(themeType));
+  }, [themeType]);
 
-    return {
-        theme,
-        setThemeType,
-    };
+  return {
+    theme,
+    setThemeType,
+  };
 }

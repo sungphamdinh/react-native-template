@@ -10,15 +10,15 @@ import TestUseHitsAPI from "./screens/test_use_hits_api";
 const Stack = createStackNavigator();
 
 export default function Main() {
-    return (
-        <NavigationContainer>
-            <Stack.Navigator initialRouteName="Home">
-                <Stack.Screen name="Home" component={Home} />
-                <Stack.Screen name="TestTheme" component={TestTheme} />
-                <Stack.Screen name="TestStorage" component={TestStorage} />
-                <Stack.Screen name="TestUseInterval" component={TestUseInterval} />
-                <Stack.Screen name="TestUseHitsAPI" component={TestUseHitsAPI} />
-            </Stack.Navigator>
-        </NavigationContainer>
-    );
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="TestTheme" component={TestTheme} />
+        <Stack.Screen name="TestStorage" component={TestStorage} />
+        <Stack.Screen name="TestUseInterval" component={TestUseInterval} />
+        <Stack.Screen name="TestUseHitsAPI" component={TestUseHitsAPI} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
