@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { View, Text, ActivityIndicator, Button } from "react-native";
-import useHitsAPI from "../shared/hooks/api/useHitsAPI";
+import useHitsApi from "../shared/hooks/api/useHitsApi";
 import { TextInput } from "react-native-gesture-handler";
 
 export default function TestUseHitsAPI() {
-    const { data, isLoading, setQuery } = useHitsAPI();
+    const { data, isLoading, setQuery } = useHitsApi();
     const [value, setValue] = useState<string>("");
 
     return (
