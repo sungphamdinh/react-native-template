@@ -37,6 +37,12 @@ export default function Home() {
           navigation.navigate("TestUseHitsAPI");
         }}
       />
+      <Button
+        title="Test PanGestureExample"
+        onPress={() => {
+          navigation.navigate("PanGestureExample");
+        }}
+      />
     </View>
   );
 }

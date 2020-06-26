@@ -6,6 +6,7 @@ import TestTheme from "./screens/test_theme";
 import TestStorage from "./screens/test_storage";
 import TestUseInterval from "./screens/test_use_interval";
 import TestUseHitsAPI from "./screens/test_use_hits_api";
+import PanGestureExample from "./screens/pan_gesture_example";
 
 const Stack = createStackNavigator();
 
@@ -18,6 +19,7 @@ export default function Main() {
         <Stack.Screen name="TestStorage" component={TestStorage} />
         <Stack.Screen name="TestUseInterval" component={TestUseInterval} />
         <Stack.Screen name="TestUseHitsAPI" component={TestUseHitsAPI} />
+        <Stack.Screen name="PanGestureExample" component={PanGestureExample} options={{title: "PanGesture"}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
