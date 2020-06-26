@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import {
   Animated,
   PanResponder,
@@ -11,10 +11,16 @@ export default function useDragable() {
 
   const [isPressed, setIsPressed] = useState<boolean>(false);
 
-  pan.addListener((value) => {
+  const id =  pan.addListener((value) => {
     animatedX.current = value.x;
     animatedY.current = value.y;
   });
+
+  useEffect(() => {
+    return () => {
+      pan.removeListener(id);
+    }
+  })
 
   function handleStartShouldSetPanResponder() {
     return true;

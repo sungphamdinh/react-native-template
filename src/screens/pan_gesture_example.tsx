@@ -1,36 +1,11 @@
 import React from "react";
-import {
-  View,
-  Text,
-  Animated,
-} from "react-native";
-import useDragable from "../shared/hooks/useDragable";
+import { View } from "react-native";
+import DragableList from "./dragable_list/dragable_list";
 
 export default function PanGestureExample() {
-  const {
-    isDragHold,
-    animateX,
-    animateY,
-    gestureResponderHandler,
-  } = useDragable();
-
   return (
     <View style={{ alignItems: "center", marginTop: 8 }}>
-      <Text>PanGesture</Text>
-      <Animated.View
-        style={{
-          transform: [{ translateX: animateX }, { translateY: animateY }],
-          backgroundColor: isDragHold ? "green" : "red",
-        }}
-        {...gestureResponderHandler}
-      >
-        <View
-          style={{
-            width: 100,
-            height: 100,
-          }}
-        ></View>
-      </Animated.View>
+      <DragableList />
     </View>
   );
 }
