@@ -1,8 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import {
-  Animated,
-  PanResponder,
-} from "react-native";
+import { Animated, PanResponder } from "react-native";
 
 export default function useDragable() {
   const pan = useRef(new Animated.ValueXY()).current;
@@ -11,7 +8,7 @@ export default function useDragable() {
 
   const [isPressed, setIsPressed] = useState<boolean>(false);
 
-  const id =  pan.addListener((value) => {
+  const id = pan.addListener((value) => {
     animatedX.current = value.x;
     animatedY.current = value.y;
   });
@@ -19,8 +16,8 @@ export default function useDragable() {
   useEffect(() => {
     return () => {
       pan.removeListener(id);
-    }
-  })
+    };
+  });
 
   function handleStartShouldSetPanResponder() {
     return true;
