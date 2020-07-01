@@ -43,6 +43,12 @@ export default function Home() {
           navigation.navigate("PanGestureExample");
         }}
       />
+      <Button
+        title="Test GraphQl"
+        onPress={() => {
+          navigation.navigate("GraphQL");
+        }}
+      />
     </View>
   );
 }
